@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="itemPlace"
+            type="com.example.mvvm.viewModel.ItemPlaceViewModel" />
+    </data>
+
+
+    <RelativeLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp">
+
+        <!-- imageView item place -->
+
+
+        <ImageView
+            android:id="@+id/imageViewItemPlace"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:scaleType="centerCrop"
+            loadImage="@{itemPlace.image}"
+            app:srcCompat="@drawable/ic_launcher_foreground"
+
+            />
+
+        <LinearLayout
+            android:id="@+id/layoutText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="8dp"
+            android:layout_toEndOf="@id/imageViewItemPlace"
+            android:orientation="vertical">
+
+            <!-- textView title item place -->
+            <TextView
+                android:id="@+id/textTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{itemPlace.title}"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                tools:text="Place Name" />
+
+            <!-- textView location item place -->
+            <TextView
+                android:id="@+id/textLocation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{itemPlace.location}"
+                tools:text="Place Location" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+
+</layout>
